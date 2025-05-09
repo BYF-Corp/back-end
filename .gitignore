@@ -1,0 +1,19 @@
+# Ignore pycache and .pyc files
+__pycache__/
+*.pyc
+
+# Ignore SQLite database
+db.sqlite3
+
+# Ignore environment variables (if using .env)
+.env
+
+# Ignore migrations (if you want to re-create them)
+menu/migrations/
+friend_fries/migrations/
+
+# Ignore logs
+*.log
+
+# Ignore Django secret key file (if applicable)
+secret_key.txt
