@@ -12,5 +12,7 @@ router.register(r'flavor', FlavorViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', include(router.urls))
+    path('api/', include(router.urls)),
+    path('api/', include('menu.urls')),
+    path('api/dashboard/summary/', dashboard_summary, name='dashboard-summary'),
 ]

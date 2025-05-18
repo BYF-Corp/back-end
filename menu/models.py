@@ -11,7 +11,7 @@ class FriedItem(models.Model):
 
 class Order(models.Model):
     guest_name = models.CharField(max_length=100, blank=True, null=True)
-    date_ordered = models.DateTimeField(auto_now_add=True)
+    date_ordered = models.DateTimeField(auto_now_add=True, db_index=True)
     def get_total_price(self):
         return sum(item.get_total_price() for item in self.items.all())
     
@@ -68,3 +68,4 @@ class OrderItem(models.Model):
             flavors_str = ', '.join(all_flavors)
 
         return f"{self.quantity} x {self.fried.name} ({self.size.size_name}) [{flavors_str}] {self.get_total_price()}"
+
